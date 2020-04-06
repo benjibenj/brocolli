@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `A 🥦 blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Benjamin Vaysse`,
+      summary: `a software engineer student currently quarantined in Colombia, trying to make the most out of his time.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A blog about [tech, probably some other random shit, ...]`,
+    siteUrl: `https://brocolli.now.sh/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `_VayB`,
     },
   },
   plugins: [

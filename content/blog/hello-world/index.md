@@ -1,22 +1,22 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: Welcome to Brocolli
+date: "2020-04-06T22:12:03.284Z"
+description: "A must read"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is my first blog post. Just fumbling around.
 
-I'm sure I'll write a lot more interesting things in the future.
+I'm still unsure what topics this blog will cover.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+Meanwhile, here's a great quote from this Wikipedia on
+[the late-2011 norwegian butter-crisis](https://en.wikipedia.org/wiki/Norwegian_butter_crisis).
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+> The Norwegian butter crisis began in late 2011 with an
+> acute shortage of butter and inflation of its price
+> across markets in Norway. The shortage caused soaring
+> prices and stores' stocks of butter ran out within minutes
+> of deliveries. According to the Danish tabloid B.T.,
+> Norway was gripped by smør-panik ("butter panic") as a
+> result of the butter shortage..
 
-![Chinese Salty Egg](./salty_egg.jpg)
+![Butter](./norvegian_butter.jpg)
