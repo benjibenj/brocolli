@@ -30,11 +30,11 @@ const Layout = ({ location, title, children }) => {
 
 const FullWidthContainer = styled("div")`
   width: 100%;
-  background-color: ${Colors.utility.black.default};
+  background-color: ${props => props.darkMode ? Colors.utility.black.default : Colors.primary.eggShell.default};
   a {
     color: ${Colors.primary.orange.default};
   }
-  color: ${Colors.utility.white.default};
+  color: ${props => props.darkMode ? Colors.utility.white.default : Colors.utility.paragraph.default};
 `;
 
 

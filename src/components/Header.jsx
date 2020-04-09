@@ -3,10 +3,17 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-const Header = ({ location, title }) => {
+const Header = ({ darkMode, location, title }) => {
   const data = useStaticQuery(graphql`
     query {
-      black: file(relativePath: { eq: "icons/brocolli-icon-circle-eggshell.png" }) {
+      dark: file(relativePath: { eq: "icons/brocolli-icon-circle-eggshell.png" }) {
+        childImageSharp {
+          fixed(width: 150) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      light: file(relativePath: { eq: "icons/brocolli-icon-circle-black.png" }) {
         childImageSharp {
           fixed(width: 150) {
             ...GatsbyImageSharpFixed
@@ -24,7 +31,7 @@ const Header = ({ location, title }) => {
           to={`/`}
         >
           <Image
-            fixed={data.black.childImageSharp.fixed}
+            fixed={darkMode ? data.dark.childImageSharp.fixed : data.light.childImageSharp.fixed}
             alt={"logo_brocolli"}
           />
         </Link>
