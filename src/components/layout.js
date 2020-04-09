@@ -1,18 +1,28 @@
-import React from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
-import Colors from "../rules/colors"
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 import Header from "./Header"
+import Footer from "./Footer"
+import Colors from "../rules/colors"
 
 import { rhythm } from "../utils/typography"
 
+
+library.add(fab, fas, far);
+
+
 const Layout = ({ location, title, children }) => {
+  const [darkMode, switchDarkMode] = useState(true);
   return (
-    <FullWidthContainer>
+    <FullWidthContainer darkMode={darkMode}>
     <LayoutContainer>
-      <Header location={location} title={title} />
-      <Main>{children}</Main>
-      <footer>© {new Date().getFullYear()}</footer>
+      <Header location={location} title={title} darkMode={darkMode}/>
+      <Main darkMode={darkMode}>{children}</Main>
+      <Footer darkMode={darkMode} switchDarkMode={switchDarkMode}/>
     </LayoutContainer>
     </FullWidthContainer>
   )

@@ -17,7 +17,7 @@ const Header = ({ location, title }) => {
   `)
   const rootPath = `${__PATH_PREFIX__}/`
   return (
-    <header>
+    <HeaderContainer>
       {location.pathname === rootPath ? (
         <LogoCenter>
         <Link
@@ -43,9 +43,13 @@ const Header = ({ location, title }) => {
           </Link>
         </h3>
       )}
-    </header>
+    </HeaderContainer>
   )
 }
+
+const HeaderContainer = styled("header")`
+  position: relative; 
+`;
 
 const LogoCenter = styled("div")`
   display: flex;

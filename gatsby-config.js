@@ -3,7 +3,7 @@ module.exports = {
     title: `Brocolli`,
     author: {
       name: `Ben V`,
-      summary: `a software engineer student trying to make the most out of his time during quarantine in Colombia.`,
+      summary: `a software engineer student trying to make the most out of his time while quarantined in Colombia.`,
     },
     description: `A blog about [tech, probably some other random shit, ...]`,
     siteUrl: `https://brocolli.now.sh/`,
