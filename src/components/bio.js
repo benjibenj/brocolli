@@ -57,10 +57,10 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong>, {author.summary}
+        Personal blog by <strong>{author.name}</strong>, {author.summary}
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          Not worth following him on Twitter, he never posts shit.
+          Probably not worth following me on Twitter, as I don't tweet.
         </a>
       </p>
     </div>

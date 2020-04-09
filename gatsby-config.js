@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `A 🥦 blog`,
+    title: `Brocolli`,
     author: {
-      name: `Benjamin Vaysse`,
-      summary: `a software engineer student currently quarantined in Colombia, trying to make the most out of his time.`,
+      name: `Ben V`,
+      summary: `a software engineer student trying to make the most out of his time during quarantine in Colombia.`,
     },
     description: `A blog about [tech, probably some other random shit, ...]`,
     siteUrl: `https://brocolli.now.sh/`,
@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Brocolli Blog`,
+        short_name: `Brocolli`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#333132`,
+        theme_color: `#f45d48`,
         display: `minimal-ui`,
-        icon: `content/assets/brocolli-icon.png`,
+        icon: `content/assets/icons/brocolli-icon-circle-black.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
