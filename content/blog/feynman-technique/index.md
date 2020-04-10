@@ -35,7 +35,7 @@ way for you to remember, because you created it.
 
 #### Conclusion
 
-True understanding requires an active process process like teaching. The smartest kids is class aren't the ones that spend
+True understanding requires an active process like teaching. The smartest kids is class aren't the ones that spend
 all their time in books, but the ones that are trying to help others understand, finding analogies and re-phrasing ideas.
 
 With the Feynman Technique, you'll be teaching yourself *anything*. You can take it to the next level by
