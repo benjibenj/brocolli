@@ -59,7 +59,7 @@ and I mainly wrote it because I have to search **every single time** the syntax 
 do a media query. I just hope that after writing an article about it, no more googling will be
 involved.
 
-Here are some great resources if you to learn more about media queries :
+Here are some great resources if you wish to learn more about media queries :
  
 - [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries)
 - [Choose the right CSS Breakpoints](https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488)
