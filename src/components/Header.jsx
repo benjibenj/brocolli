@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
-const Header = ({ darkMode, location, title }) => {
+
+const Header = ({ location, title }) => {
+  const themeContext = useContext(ThemeManagerContext)
   const data = useStaticQuery(graphql`
     query {
       dark: file(relativePath: { eq: "icons/brocolli-icon-circle-eggshell.png" }) {
@@ -23,6 +26,7 @@ const Header = ({ darkMode, location, title }) => {
     }
   `)
   const rootPath = `${__PATH_PREFIX__}/`
+
   return (
     <HeaderContainer>
       {location.pathname === rootPath ? (
@@ -31,7 +35,7 @@ const Header = ({ darkMode, location, title }) => {
           to={`/`}
         >
           <Image
-            fixed={darkMode ? data.dark.childImageSharp.fixed : data.light.childImageSharp.fixed}
+            fixed={themeContext.isDark ? data.dark.childImageSharp.fixed : data.light.childImageSharp.fixed}
             alt={"logo_brocolli"}
           />
         </Link>

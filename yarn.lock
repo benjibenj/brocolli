@@ -5783,6 +5783,13 @@ gatsby-plugin-sharp@^2.5.3:
     svgo "1.3.2"
     uuid "^3.4.0"
 
+gatsby-plugin-styled-components@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.2.3.tgz#616f2780713a2ad975d3b2729803bd945815f63d"
+  integrity sha512-3t7DWz57T52huhBnaXny8R2jhXbvKBWQjA4CMOtauTRzopGLgJf90y4f81arqrhnyyTm8rmX8NI1PzAt8RJomg==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-plugin-typography@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.4.1.tgz#01a1f30f4f251c1875b66e176fce6859fb2baeae"
@@ -5880,6 +5887,11 @@ gatsby-source-filesystem@^2.2.2:
     read-chunk "^3.2.0"
     valid-url "^1.0.9"
     xstate "^4.8.0"
+
+gatsby-styled-components-dark-mode@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-styled-components-dark-mode/-/gatsby-styled-components-dark-mode-1.1.1.tgz#26f39d3ee5d084ac94e51fda478c911ae03b782b"
+  integrity sha512-bpSX5v/qQEGUY3FTxjIBQ8G/ptmKxzn1axx6NG8F9OiXlEzbBHFEk6Z+86tEW4qvx/wefkbKUpAoiMCvpw66Gg==
 
 gatsby-telemetry@^1.2.3:
   version "1.2.3"

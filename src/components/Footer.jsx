@@ -1,17 +1,21 @@
-import React from "react"
+import React, {useContext} from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Footer = ({ darkMode, switchDarkMode }) => {
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
+
+const Footer = () => {
+  const themeContext = useContext(ThemeManagerContext);
+  console.log(themeContext.isDark);
   return (
     <FooterContainer>
       <Text>© {new Date().getFullYear()}</Text>
       <DayNightToggle
-        darkMode={darkMode}
-        onClick={() => switchDarkMode(!darkMode)}
+        darkMode={themeContext.isDark}
+        onClick={() => themeContext.toggleDark()}
         title={"toggle dark mode"}
       >
-        {darkMode ? (
+        {themeContext.isDark ? (
           <FontAwesomeIcon icon={"sun"} />
         ) : (
           <FontAwesomeIcon icon={"moon"} />

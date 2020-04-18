@@ -76,6 +76,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: `${__dirname}/src/rules/colors.js`.lightTheme,
+        dark: `${__dirname}/src/rules/colors.js`.darkTheme
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
