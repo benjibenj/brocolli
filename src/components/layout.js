@@ -1,21 +1,25 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
+import Helmet from "react-helmet"
 
 import Header from "./Header"
 import Footer from "./Footer"
 import Colors from "../rules/colors"
 
 import { rhythm } from "../utils/typography"
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 library.add(fab, fas, far)
 
 const Layout = ({ location, title, children }) => {
+  const displayMode = useContext(ThemeManagerContext).isDark ? "dark" : "light";
   return (
     <FullWidthContainer>
+      <Helmet htmlAttributes={{displayMode}} />
       <LayoutContainer>
         <Header location={location} title={title} />
         <Main>{children}</Main>
