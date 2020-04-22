@@ -1,11 +1,9 @@
-import React, {useContext} from "react"
+import React from "react"
 import styled from "styled-components"
 import Colors from "../rules/colors"
 
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
-const Footer = () => {
-  const themeContext = useContext(ThemeManagerContext);
+const Footer = ({themeContext}) => {
   const themeIcon = themeContext.isDark ? "☀️" : "🌙️" ;
   const themeText = themeContext.isDark ? "light" : "dark";
   return (
@@ -13,7 +11,10 @@ const Footer = () => {
       <Text>© {new Date().getFullYear()}</Text>
       <DayNightToggle
         darkMode={themeContext.isDark}
-        onClick={() => themeContext.toggleDark()}
+        onClick={() => {
+          themeContext.toggleDark();
+        }
+        }
         title={"toggle dark mode"}
       >
         {themeIcon} Switch to {themeText} mode

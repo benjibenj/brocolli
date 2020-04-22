@@ -1,5 +1,5 @@
-import React, { useContext } from "react"
-import styled from "styled-components"
+import React, { useContext, useEffect } from "react"
+import styled, { withTheme } from "styled-components"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { fas } from "@fortawesome/free-solid-svg-icons"
@@ -16,14 +16,18 @@ import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 library.add(fab, fas, far)
 
 const Layout = ({ location, title, children }) => {
-  const displayMode = useContext(ThemeManagerContext).isDark ? "dark" : "light";
+  const themeContext = useContext(ThemeManagerContext);
+  const displayMode = themeContext.isDark ? "dark" : "light";
+  useEffect(() =>
+    themeContext.toggleDark(window.localStorage.getItem('dark') === "true"),
+    []);
   return (
     <FullWidthContainer>
-      <Helmet htmlAttributes={{displayMode}} />
+      <Helmet htmlAttributes={{ displayMode }} />
       <LayoutContainer>
         <Header location={location} title={title} />
         <Main>{children}</Main>
-        <Footer />
+        <Footer themeContext={themeContext}/>
       </LayoutContainer>
     </FullWidthContainer>
   )
@@ -54,4 +58,4 @@ const Main = styled("main")`
   min-height: 62vh;
 `
 
-export default Layout
+export default withTheme(Layout)
