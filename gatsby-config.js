@@ -5,7 +5,7 @@ module.exports = {
       name: `Ben V`,
       summary: `a software engineer student trying to make the most out of his time while quarantined in Colombia.`,
     },
-    description: `A blog about [tech, probably some other random shit, ...]`,
+    description: `A blog about [tech, some other random shit, ...]`,
     siteUrl: `https://brocolli.now.sh/`,
     social: {
       twitter: `_VayB`,
@@ -85,7 +85,7 @@ module.exports = {
     {
       resolve: `gatsby-styled-components-dark-mode`,
       options: {
-        light: `${__dirname}/src/rules/colors.js`.lightTheme,
+       light: `${__dirname}/src/rules/colors.js`.lightTheme,
         dark: `${__dirname}/src/rules/colors.js`.darkTheme
       },
     },
