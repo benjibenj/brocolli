@@ -6,7 +6,6 @@ import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 const Footer = () => {
   const themeContext = useContext(ThemeManagerContext);
-  console.log(themeContext.isDark);
   return (
     <FooterContainer>
       <Text>© {new Date().getFullYear()}</Text>
