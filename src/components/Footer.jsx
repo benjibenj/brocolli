@@ -1,11 +1,13 @@
 import React, {useContext} from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Colors from "../rules/colors"
 
 import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 const Footer = () => {
   const themeContext = useContext(ThemeManagerContext);
+  const themeIcon = themeContext.isDark ? "☀️" : "🌙️" ;
+  const themeText = themeContext.isDark ? "light" : "dark";
   return (
     <FooterContainer>
       <Text>© {new Date().getFullYear()}</Text>
@@ -14,11 +16,7 @@ const Footer = () => {
         onClick={() => themeContext.toggleDark()}
         title={"toggle dark mode"}
       >
-        {themeContext.isDark ? (
-          <FontAwesomeIcon icon={"sun"} />
-        ) : (
-          <FontAwesomeIcon icon={"moon"} />
-        )}
+        {themeIcon} Switch to {themeText} mode
       </DayNightToggle>
     </FooterContainer>
   )
@@ -34,10 +32,11 @@ const Text = styled("div")``
 
 const DayNightToggle = styled("button")`
   cursor: pointer;
-  font-size: 24px;
-  color: #f9c232;
-  border: none;
-  padding: none;
+  color: ${props => props.theme.isDark ? Colors.utility.white.default : Colors.utility.paragraph.default};
+  border: 1px solid ${props => props.theme.isDark ? Colors.primary.orange.darker : Colors.utility.paragraph.default};
+  padding: .625rem;
+  border-radius: 5px;
+  font-size: 1rem;
   background-color: inherit;
 `
 
