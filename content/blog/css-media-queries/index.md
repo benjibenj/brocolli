@@ -52,7 +52,7 @@ In the example above, the default behaviour for the element with `class="contain
 Then, we define a media query that will depend on the viewport's with. Between 320 and 479px, a new CSS rule
 will overwrite the default behaviour, replacing `flex-direction: row` with `flex-direction: column`.
 
-## Learn more about flexbox
+## Learn more about media queries
 
 This article covers 90% of the problems you'll be solving with media queries, 
 and I mainly wrote it because I have to search **every single time** the syntax to
