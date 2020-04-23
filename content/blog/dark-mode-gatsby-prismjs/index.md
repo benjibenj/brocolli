@@ -93,7 +93,3 @@ You can also have a look at the implementation of this solution on my blog [here
 If you have any questions, google is your friend.
 
 Peace out ✌️
-
-
-
-
