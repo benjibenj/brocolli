@@ -85,7 +85,7 @@ useEffect(() =>
 
 ### #4 That's about it
 
-I wrote thing article after reading [this conversation on spectrum](https://spectrum.chat/gatsby-js/general/prismjs-syntax-highlighting-with-mode-light-vs-dark-toggle~0ee962a1-501c-4879-960a-242f85387d1c).
+I wrote this article after reading [this conversation on spectrum](https://spectrum.chat/gatsby-js/general/prismjs-syntax-highlighting-with-mode-light-vs-dark-toggle~0ee962a1-501c-4879-960a-242f85387d1c).
 The original solution comes from **tetchi**, check out his [blog](https://www.tetchi.ca/) or how he implemented this on his [github](https://github.com/Tetsuro/tetsby).
 
 You can also have a look at the implementation of this solution on my blog [here](https://github.com/benjamin-vaysse/brocolli).
