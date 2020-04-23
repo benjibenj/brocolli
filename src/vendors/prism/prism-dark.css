@@ -163,3 +163,8 @@ html[displayMode='dark'] .prism-titlename {
   font-weight: bold;
   color: orange;
 }
+
+html[displayMode='dark'] blockquote {
+    color: #abb2bf;
+    border-left: 0.32813rem solid hsl(219,13.5%,71%);
+}
