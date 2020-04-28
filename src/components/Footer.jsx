@@ -5,10 +5,9 @@ import Colors from "../rules/colors"
 
 const Footer = ({themeContext}) => {
   const themeIcon = themeContext.isDark ? "☀️" : "🌙️" ;
-  const themeText = themeContext.isDark ? "light" : "dark";
   return (
     <FooterContainer>
-      <Text>© {new Date().getFullYear()}</Text>
+      <Text>© {new Date().getFullYear()}-Present</Text>
       <DayNightToggle
         darkMode={themeContext.isDark}
         onClick={() => {
@@ -17,7 +16,7 @@ const Footer = ({themeContext}) => {
         }
         title={"toggle dark mode"}
       >
-        {themeIcon} Switch to {themeText} mode
+        {themeIcon}
       </DayNightToggle>
     </FooterContainer>
   )
@@ -34,10 +33,10 @@ const Text = styled("div")``
 const DayNightToggle = styled("button")`
   cursor: pointer;
   color: ${props => props.theme.isDark ? Colors.utility.white.default : Colors.utility.paragraph.default};
-  border: 1px solid ${props => props.theme.isDark ? Colors.primary.orange.darker : Colors.utility.paragraph.default};
-  padding: .625rem;
+  border: none;
+  padding: 0.4rem 1rem;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 2rem;
   background-color: inherit;
 `
 
