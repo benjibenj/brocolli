@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Atomic Habits",
+    "authors": ["James Clear"],
+    "categories": ["non-fiction", "self-improvement"]
+  },
+  {
+    "title": "Deep work",
+    "authors": ["Cal Newport"],
+    "categories": ["non-fiction", "self-improvement"]
+  },
+  {
+    "title": "The Martian",
+    "authors": ["Andy Weir"],
+    "categories": ["fiction", "adventure"]
+  },
+  {
+    "title": "Rework",
+    "authors": ["Jason Fried", "David Heinemeier Hansson"],
+    "categories": ["non-fiction", "entrepreneurship", "business"]
+  },
+  {
+    "title": "The Pillars of the Earth",
+    "authors": ["Ken Follett"],
+    "categories": ["historical", "novel"]
+  },
+  {
+    "title": "The Da Vinci Code",
+    "authors": ["Dan Brown"],
+    "categories": ["novel", "thriller", "mystery"]
+  }
+]

@@ -46,6 +46,10 @@ const FullWidthContainer = styled("div")`
     props.theme.isDark
       ? Colors.utility.white.default
       : Colors.utility.paragraph.default};
+  ul li {
+    padding-left: 0.5rem;
+    margin-left: 2rem;
+}
 `
 
 const LayoutContainer = styled("div")`

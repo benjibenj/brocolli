@@ -1,5 +1,5 @@
 /**
- * Bio component that queries for data
+ * Bio component that queries for json
  * with Gatsby's useStaticQuery component
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
