@@ -1,44 +1,179 @@
 ---
-title: Learn to learn with the Feynman Technique
-date: "2020-04-08T21:15:22Z"
-description: "Discover the best way to learn just about anything"
+title: "How to create a matrix input component with React"
+date: "2020-05-07T22:00:00-05:00"
+description: "(+ bonus : display your matrix LaTeX style with KaTeX)"
 ---
 
-###  Meet Feynman (Richard)
+## Prerequisites
 
-![Handsome Richard](./feynman.jpg)
+For this example, we'll be handling state with **hooks**. If you're not familiar with hooks, check
+[React's Docs](https://reactjs.org/docs/hooks-intro.html). It's the future of React and it'll make your life easier
+so don't think twice about it.
 
-Known for his work on quantum mecanics, the American Nobel prize-winning physicist 
-developed a method to **learn stuff**. The premise of this method is 
-that in order to fundamentally understand something, you should be able to **teach it**.
+If you want to display your matrix in LaTex, you'll also have to install [`katex`](https://katex.org/docs/node.html)
+and [`react-katex`](https://www.npmjs.com/package/react-katex).
 
-#### The method is structured in four simple steps : 
+## Parent component
 
-1. Choose a topic/concept you want to learn about.
-2. Write an explanation of the concept, but pretend you're teaching it to somebody else.
-Focus on plain, simple language. Bonus point if you add examples, diagrams, ... etc.
-3. Review what you just wrote, and identify the areas where you didn't know enough to explain it 
-easily. **Study those areas**.
-4. Re-write those shaddy sections you identified in the previous step, in simpler terms.
+In the parent component, we'll be declaring different states for
 
-#### Why and how does this work
+1. The size of the matrix (object with 'columns' and 'rows' attributes).
+2. The matrix itself (a two dimensional array == an array of array(s)).
+3. The KaTeX string associated with the matrix.
 
-Very often, you'll read something, think *"Uh! This makes sense."*, and consider it as acquired.
-The next day, you're being asked to explain this concept but you're just unable to. 
+```jsx
+const [matrixSize, setMatrixSize] = useState({
+  rows: 2,
+  columns: 2,
+})
+// or, if it's a square matrix :
+// const [squareMatrixSize, setSquareMatrixSize] = useState(2);
+const [matrix, setMatrix] = useState([[0, 0], [0, 0]])
+const [latexMatrix, setLatexMatrix] = useState(
+  "\\begin{pmatrix}\n 0 & 0\\\\\n 0 & 0\n \\end{pmatrix}",
+)
+```
 
-Our brain is tricking ourselves into thinking that we're experts at whatever we're able to understand. 
-The truth is, if you're not able to explain it, you don't really understand it.
+## Matrix Size Input Component
 
-This technique is just a way for you to confront what you don't know, and study it. Because you're actively
-engaged (writing, instead of reading), you feed your long-term memory with information that is structured in the best 
-way for you to remember, because you created it.
+The first step is to let the user choose the size of the matrix. We thus create a component that takes as props
+the `setMatrixSize` function.
 
-#### Conclusion
+```jsx
+<MatrixInputSize setMatrixSize={object => setMatrixSize(object)} />
+```
 
-True understanding requires an active process like teaching. The smartest kids is class aren't the ones that spend
-all their time in books, but the ones that are trying to help others understand, finding analogies and re-phrasing ideas.
+Here's what the `MatrixInputSize` input should look like :
 
-With the Feynman Technique, you'll be teaching yourself *anything*. You can take it to the next level by
-teaching other people : do code-reviews, 
-write tweet threads ([Chris Achard is **very good** at this](https://twitter.com/chrisachard/status/1175022111758442497?lang=en)), 
-answer questions on StackOverFlow, start a blog or a podcast.
+```jsx
+<input
+  type="number"
+  defaultValue={2}
+  onChange={e => {
+    const rows = parseInt(e.target.value)
+    // if we only want matrix of size between 2 and 8
+    if (2 <= rows && rows <= 8) {
+      setMatrixSize(prevSize => ({
+        ...prevSize,
+        rows: rows,
+      }))
+    }
+  }}
+/>
+```
+
+We use [object destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+to set the new value of the `matrixSize` state while keeping the value we are not changing (here we change the number of
+rows without changing the number of columns).
+
+## Matrix Input Component
+
+Now for the real deal, **how do we dynamically create the different inputs and get their values to update the `matrix`
+state ?**
+
+We create a new component : `MatrixInput`.
+
+```jsx
+<MatrixInput matrixSize={matrixSize} setMatrix={matrix => setMatrix(matrix)} />
+```
+
+Inside this component, we'll be creating a new variable called `matrix`, which we'll use to build the inputs.
+
+```javascript
+let matrix = Array(matrixSize.rows)
+for (let i = 0; i < matrixSize.rows; i++) {
+  matrix[i] = new Array(matrixSize.columns).fill(0)
+}
+```
+
+We then build our form with the `map()` function o
+
+```jsx
+<form onSubmit={handleSubmit}>
+  {matrix.map((row, indexRow = 1) => {
+    return (
+      <MatrixRow key={indexRow}>
+        {row.map((item, indexColumn = 1) => {
+          return (
+            <input
+              key={indexRow + " " + indexColumn}
+              type="text"
+              defaultValue={0}
+              name={indexRow + "," + indexColumn}
+            />
+          )
+        })}
+      </MatrixRow>
+    )
+  })}
+  <button>{"Save A"}</button>
+</form>
+```
+
+You just have to define `<MatrixRow>` as a flex-container (css : `display: flex;`) and you'll have `n` rows of `m` 
+elements.
+
+![InputMatrix](./matrixInput.png)
+
+
+The last step is to get the values from the form and update the `matrix` state with those values. We're actually able to 
+loop through the inputs of the form with `event.target[count]`, which is really useful in this case.
+
+```javascript
+const handleSubmit = event => {
+    event.preventDefault();
+    let count = 0;
+    for (let i = 0; i < matrixSize.rows; i++) {
+      for (let j = 0; j < matrixSize.columns; j++) {
+        // If the floating point number cannot be parsed, we set 0 for this value
+        matrix[i][j] = !isNaN(parseFloat(event.target[count].value)) ? parseFloat(event.target[count].value) : 0;
+        count += 1;
+      }
+    }
+    setMatrix(matrix);
+}
+```
+
+## Matrix rendering with `react-katex`
+
+In the parent component, let's set a `useEffect` with `matrix` as a dependency so that when the `matrix` state is modified,
+we update the `latexMatrix` with the right values.
+
+```jsx
+useEffect(() => {
+  setLatexMatrix(renderLatexMatrix(matrix))
+  // + do any action you want on the matrix
+}, [matrix])
+```
+
+As you can see, we're using a function called `renderLatexMatrix`. This function transforms a matrix into a string
+readable by `react-katex` to be displayed in the browser in a LaTeX manner.
+
+Here is this function :
+
+```jsx
+const renderLatexMatrix = matrix => {
+  return (
+    "\\begin{pmatrix}\n" +
+    matrix
+      .map((row, index) => {
+        if (index === matrix.length) return row.join(" & ") + "\n"
+        else return row.join(" & ") + "\\\\\n"
+      })
+      .join("") +
+    "\\end{pmatrix}"
+  )
+}
+
+export default renderLatexMatrix
+```
+
+Then, we render the matrix :
+
+```javascript
+ <BlockMath math={"A = " + latexMatrix} />
+```
+
+![LaTeXMatrix](./matrixLatex.png)
+
+**Isn't that beautiful ?**
