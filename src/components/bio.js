@@ -60,7 +60,7 @@ const Bio = () => {
         Personal blog by <strong>{author.name}</strong>, {author.summary}
         {` `}
         <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
-          Probably not worth following me on Twitter, as I don't tweet.
+          I don't really use twitter. But hey, maybe one day.
         </a>
       </p>
     </div>

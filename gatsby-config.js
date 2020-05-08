@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Brocolli`,
     author: {
-      name: `Ben V`,
-      summary: `a software engineer student trying to make the most out of his time while quarantined in Colombia.`,
+      name: `Ben Vaysse`,
+      summary: `a software engineer student trying some stuff while confined in Colombia.`,
     },
     description: `A blog about [tech, some other random shit, ...]`,
     siteUrl: `https://brocolli.now.sh/`,
