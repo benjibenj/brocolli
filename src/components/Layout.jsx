@@ -46,7 +46,7 @@ const FullWidthContainer = styled("div")`
     props.theme.isDark
       ? Colors.utility.white.default
       : Colors.utility.paragraph.default};
-  ul li {
+  ul, ol > li {
     padding-left: 0.5rem;
     margin-left: 2rem;
 }
