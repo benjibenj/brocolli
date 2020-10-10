@@ -79,6 +79,12 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
@@ -87,8 +93,8 @@ module.exports = {
     {
       resolve: `gatsby-styled-components-dark-mode`,
       options: {
-        light: `${__dirname}/src/rules/colors.js`.lightTheme,
-        dark: `${__dirname}/src/rules/colors.js`.darkTheme,
+       light: `${__dirname}/src/rules/colors.js`.lightTheme,
+        dark: `${__dirname}/src/rules/colors.js`.darkTheme
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

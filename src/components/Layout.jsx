@@ -10,25 +10,24 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Colors from "../rules/colors"
 
+import { rhythm } from "../utils/typography"
 import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 library.add(fab, fas, far)
 
 const Layout = ({ location, title, children }) => {
-  const themeContext = useContext(ThemeManagerContext)
-  const displayMode = themeContext.isDark ? "dark" : "light"
-  useEffect(
-    () =>
-      themeContext.toggleDark(window.localStorage.getItem("dark") === "true"),
-    []
-  )
+  const themeContext = useContext(ThemeManagerContext);
+  const displayMode = themeContext.isDark ? "dark" : "light";
+  useEffect(() =>
+    themeContext.toggleDark(window.localStorage.getItem('dark') === "true"),
+    []);
   return (
     <FullWidthContainer>
       <Helmet htmlAttributes={{ displayMode }} />
       <LayoutContainer>
         <Header location={location} title={title} />
         <Main>{children}</Main>
-        <Footer themeContext={themeContext} />
+        <Footer themeContext={themeContext}/>
       </LayoutContainer>
     </FullWidthContainer>
   )
@@ -47,17 +46,16 @@ const FullWidthContainer = styled("div")`
     props.theme.isDark
       ? Colors.utility.white.default
       : Colors.utility.paragraph.default};
-  ul,
-  ol > li {
+  ul, ol > li {
     padding-left: 0.5rem;
     margin-left: 2rem;
-  }
+}
 `
 
 const LayoutContainer = styled("div")`
   margin: 0 auto;
-  max-width: 42rem;
-  padding: 2.625rem 1.3125rem;
+  max-width: ${rhythm(24)};
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
 
 const Main = styled("main")`

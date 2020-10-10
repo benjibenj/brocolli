@@ -9,6 +9,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
+import { rhythm } from "../utils/typography"
+
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -38,14 +40,14 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: "4.375rem",
+        marginBottom: rhythm(2.5),
       }}
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
-          marginRight: "0.875rem",
+          marginRight: rhythm(1 / 2),
           marginBottom: 0,
           minWidth: 50,
           borderRadius: `100%`,
@@ -57,11 +59,7 @@ const Bio = () => {
       <p>
         Personal blog by <strong>{author.name}</strong>, {author.summary}
         {` `}
-        <a
-          href={`https://twitter.com/${social.twitter}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
           I don't really use twitter. But hey, maybe one day.
         </a>
       </p>
