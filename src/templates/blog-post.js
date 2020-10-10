@@ -4,8 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import styled from "styled-components";
-import { rhythm, scale } from "../utils/typography"
+import styled from "styled-components"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -22,7 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <header>
           <h1
             style={{
-              marginTop: rhythm(1),
+              marginTop: "1.75rem",
               marginBottom: 0,
             }}
           >
@@ -30,9 +29,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </h1>
           <p
             style={{
-              ...scale(-1 / 5),
+              lineHeight: "1.75rem",
               display: `block`,
-              marginBottom: rhythm(1),
+              marginBottom: "1.75rem",
             }}
           >
             {post.frontmatter.date}
@@ -41,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <Section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: "1.75rem",
           }}
         />
         <footer>
@@ -79,7 +78,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   )
 }
 
-const Section = styled("section")``;
+const Section = styled("section")``
 
 export default BlogPostTemplate
 
