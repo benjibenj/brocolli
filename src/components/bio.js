@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
@@ -57,9 +57,14 @@ const Bio = () => {
         }}
       />
       <p>
-        Personal blog by <strong>{author.name}</strong>, {author.summary}
+        Personal blog by <strong>{author.name}</strong> (
+        <Link to={`/about`}>about</Link>), {author.summary}
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noopener noreferrer">
+        <a
+          href={`https://twitter.com/${social.twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           I don't really use twitter. But hey, maybe one day.
         </a>
       </p>

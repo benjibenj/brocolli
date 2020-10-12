@@ -28,5 +28,10 @@
     "title": "The Da Vinci Code",
     "authors": ["Dan Brown"],
     "categories": ["novel", "thriller", "mystery"]
+  },
+  {
+    "title": "Dune",
+    "authors": ["Frank Herbert"],
+    "categories": ["Science-fiction", "adventure"]
   }
 ]

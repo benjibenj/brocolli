@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Brocolli`,
     author: {
-      name: `Ben Vaysse`,
-      summary: `a software engineer student trying some stuff while confined in Colombia.`,
+      name: `Benjamin Vaysse`,
+      summary: `a software engineer student messing around during a global pandemic.`,
     },
-    description: `A blog about [tech, some other random shit, ...]`,
+    description: `A blog about [tech, maybe some other random shit, ...]`,
     siteUrl: `https://brocolli.now.sh/`,
     social: {
       twitter: `_VayB`,
@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: `gatsby-styled-components-dark-mode`,
       options: {
-       light: `${__dirname}/src/rules/colors.js`.lightTheme,
-        dark: `${__dirname}/src/rules/colors.js`.darkTheme
+        light: `${__dirname}/src/rules/colors.js`.lightTheme,
+        dark: `${__dirname}/src/rules/colors.js`.darkTheme,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
