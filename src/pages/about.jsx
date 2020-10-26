@@ -10,7 +10,10 @@ const AboutPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
       <h1>About</h1>
-      <p>Salut, I'm Ben, a software engineer student from 🇫🇷. </p>
+      <p>
+        Salut, I'm Ben, a software engineer student from{" "}
+        <span aria-labelledby="french-flag">🇫🇷</span>.{" "}
+      </p>
       <p>
         I write this blog, called Brocolli, to share the stuff I'm learning, and
         experiment with cool front-end stuff. You can learn more about the birth

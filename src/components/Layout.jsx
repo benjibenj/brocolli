@@ -16,18 +16,20 @@ import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 library.add(fab, fas, far)
 
 const Layout = ({ location, title, children }) => {
-  const themeContext = useContext(ThemeManagerContext);
-  const displayMode = themeContext.isDark ? "dark" : "light";
-  useEffect(() =>
-    themeContext.toggleDark(window.localStorage.getItem('dark') === "true"),
-    []);
+  const themeContext = useContext(ThemeManagerContext)
+  const displayMode = themeContext.isDark ? "dark" : "light"
+  useEffect(
+    () =>
+      themeContext.toggleDark(window.localStorage.getItem("dark") === "true"),
+    [themeContext]
+  )
   return (
     <FullWidthContainer>
       <Helmet htmlAttributes={{ displayMode }} />
       <LayoutContainer>
         <Header location={location} title={title} />
         <Main>{children}</Main>
-        <Footer themeContext={themeContext}/>
+        <Footer themeContext={themeContext} />
       </LayoutContainer>
     </FullWidthContainer>
   )
@@ -46,10 +48,11 @@ const FullWidthContainer = styled("div")`
     props.theme.isDark
       ? Colors.utility.white.default
       : Colors.utility.paragraph.default};
-  ul, ol > li {
+  ul,
+  ol > li {
     padding-left: 0.5rem;
     margin-left: 2rem;
-}
+  }
 `
 
 const LayoutContainer = styled("div")`
