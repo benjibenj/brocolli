@@ -13,12 +13,11 @@ const AboutPage = ({ data, location }) => {
       <p>Salut, I'm Ben, a software engineer student from 🇫🇷. </p>
       <p>
         I write this blog, called Brocolli, to share the stuff I'm learning, and
-        experiment with cool front-end stuff. You learn more about the birth of
-        this blog <Link to={"/blog-purpose/"}>here</Link>.
+        experiment with cool front-end stuff. You can learn more about the birth
+        of this blog <Link to={"/blog-purpose/"}>here</Link>.
       </p>
       <h2>Some tools I use</h2>
       <ul>
-        <li>Computer : 13" MacBook Air (2015)</li>
         <li>
           Hosting :{" "}
           <a
@@ -79,7 +78,7 @@ const AboutPage = ({ data, location }) => {
       <ul>
         <li>Rugby</li>
         <li>Mountains</li>
-        <li>Making stuff with my hands</li>
+        <li>Making stuff (DIY)</li>
       </ul>
       <h2>Wanna say hi?</h2>
       <ul>
